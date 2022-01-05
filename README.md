@@ -9,7 +9,7 @@ Karly Capstone is a website whose main content can only be viewed by users who h
 **Homebrew**
 
 ```bash
-brew install node@16.13.1
+brew install node@16
 ```
 
 LTS version intalls are keg-only so might need to run

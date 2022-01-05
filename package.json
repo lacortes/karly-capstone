@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "React JS Blueprint",
   "main": "index.js",
+  "engines": {
+    "node" : ">=16.13.0",
+    "npm": "~8.1.0"
+  },
   "scripts": {
     "start": "webpack serve --open --env mode=development",
     "build": "webpack --env mode=production",

@@ -12,13 +12,19 @@ module.exports = env => {
         output: {
             path: path.join(__dirname, '/dist'), 
             filename: 'bundle.js',
+            publicPath: '/',
             clean: true
         },
         devServer: {
-            port: 3010
+            port: 3010,
+            historyApiFallback: true
         },
         module: {
             rules: [
+                {
+                    test: /\.(png|jp?eg|gif|svg)$/i,
+                    type: 'asset/resource'
+                },
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
@@ -32,7 +38,10 @@ module.exports = env => {
                 {
                     test: /\.scss$/,
                     use: [
-                        MinCssExtractPlugin.loader,
+                        {
+                            loader: MinCssExtractPlugin.loader,
+                            options: { publicPath: "" }
+                        },
                         'css-loader',
                         'sass-loader'
                     ]

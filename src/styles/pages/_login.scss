@@ -1,0 +1,30 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+        margin-top: rem(30);
+        margin-bottom: rem(40);
+    }
+
+    input {
+        display: block;
+        padding: rem(5);
+        width: rem(350);
+        min-width: rem(350);
+        margin-bottom: rem(20);
+    }
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+
+    
+
+}

@@ -1,0 +1,28 @@
+body {
+    background-color: #fafafa;
+}
+
+header {
+    background-color: $dark;
+    height: rem(55);
+    padding: rem(10);
+}
+
+.nav-bar {
+    li {
+        font-size: $font-size-l;
+        color: $white;
+        display: inline-block;
+    
+        &:not(:first-child) {
+            margin-left: rem(15);
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $on-dark;
+        }
+    }
+}
+
+    

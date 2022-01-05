@@ -12,12 +12,18 @@
   "author": "Luis Cortes",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
+    "history": "^5.2.0",
+    "include-media": "^1.4.10",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.3",
+    "@babel/plugin-transform-runtime": "^7.16.5",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
     "babel-loader": "^8.2.3",

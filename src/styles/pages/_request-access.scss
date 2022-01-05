@@ -1,0 +1,13 @@
+.request-access-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+        display: block;
+        padding: rem(5);
+        width: rem(350);
+        min-width: rem(350);
+        margin-bottom: rem(20);
+    }
+}

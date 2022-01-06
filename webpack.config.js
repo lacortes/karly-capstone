@@ -2,13 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MinCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = env => {
 
-    console.log(`MODE: ${env.mode}`);
+    const environment = env.mode;
+    console.log(`MODE: ${environment}`);
 
     return {
-        mode: env.mode,
+        mode: environment,
         output: {
             path: path.join(__dirname, '/dist'), 
             filename: 'bundle.js',
@@ -57,6 +59,9 @@ module.exports = env => {
             new ESLintPlugin({
                 overrideConfigFile: path.resolve(__dirname, '.eslintrc.json'),
                 extensions: ['.jsx', '.js']
+            }),
+            new Dotenv({
+                path: `./.env.${ environment }`
             })
         ]
     }

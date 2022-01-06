@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import validator from 'validator';
 import Button from '../atoms/Button';
 import axios from 'axios';
+import { API_ROOT } from '../../core/config/environment'; 
 
 const ComingSoon = () => {
     const [ email, setEmail ] = useState('');
@@ -29,7 +30,7 @@ const ComingSoon = () => {
         }
 
         setIsMakingRequest(true);
-        axios.post('http://localhost:5050/api/email-sign-up'
+        axios.post(`${ API_ROOT }/api/email-sign-up`
             , { email }
             , { timeout: 10000 }
         )

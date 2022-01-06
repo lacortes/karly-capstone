@@ -98,6 +98,11 @@
             padding: rem(10);
         }
 
+        .invalid
+        {
+            border: 1px solid #ff002f;
+        }
+
         @include media("<=1036px") {
             display: flex;
             flex-direction: column;
@@ -123,6 +128,11 @@
         margin-top: rem(8);
         font-size: $font-size;
         font-weight: 350;
+
+    }
+
+    .error {
+        color: #ff002f;
     }
 }
 

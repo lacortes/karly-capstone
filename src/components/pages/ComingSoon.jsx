@@ -48,7 +48,7 @@ const ComingSoon = () => {
 
                 if ( status === 400 ) {
                     setBtnEnabled(false);
-                    setMsg('Invaid Email!');
+                    setMsg('Invalid Email!');
                 } else {
                     setMsg('Currently no longer accepting new sign-ups.');
                 }

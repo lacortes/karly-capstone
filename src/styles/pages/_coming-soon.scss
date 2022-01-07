@@ -98,6 +98,11 @@
             padding: rem(10);
         }
 
+        .invalid
+        {
+            border: 1px solid #ff002f;
+        }
+
         @include media("<=1036px") {
             display: flex;
             flex-direction: column;
@@ -120,9 +125,21 @@
     }
 
     .signup-message {
-        margin-top: rem(8);
         font-size: $font-size;
         font-weight: 350;
+    }
+
+    .error {
+        color: white;
+    }
+
+    .alert-error {
+        background-color: #ff002f;
+        justify-content: flex-end;
+        align-self: flex-start;
+        width: rem(500);
+        min-width: rem(100);
+        margin-bottom: rem(8);
     }
 }
 

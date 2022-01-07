@@ -6,19 +6,17 @@ import { API_ROOT } from '../../core/config/environment';
 
 const ComingSoon = () => {
     const [ email, setEmail ] = useState('');
-    const [ isEmailValid, setEmailValid ] = useState(false);
     const [ isBtnEnabled, setBtnEnabled ] = useState(false);
     const [ isMakingRequest, setIsMakingRequest ] = useState(false);
     const [ msg, setMsg ] = useState('');
+    const [ failedToSignUp, setFailedToSignUp ] = useState(false);
 
     const updateEmail = e => {
         const emailRaw = e.target.value.trim();
         if ( !validator.isEmpty(emailRaw) && validator.isEmail(emailRaw) ) {
             setBtnEnabled(true);
-            setEmailValid(true);
         } else {
             setBtnEnabled(false);
-            setEmailValid(false);
         }
         setEmail(emailRaw);
         setMsg('');
@@ -37,8 +35,10 @@ const ComingSoon = () => {
             .then( resp => {
                 const { status } = resp;
                 if (status === 201) {
+                    setFailedToSignUp(false);
                     setMsg('You will be notified once the site is up!');
                 } else {
+                    setFailedToSignUp(true);
                     setMsg('Email is currently signed up');
                 }
             })
@@ -49,7 +49,10 @@ const ComingSoon = () => {
                 if ( status === 400 ) {
                     setBtnEnabled(false);
                     setMsg('Invaid Email!');
+                } else {
+                    setMsg('Currently no longer accepting new sign-ups.');
                 }
+                setFailedToSignUp(true);
             })
             .finally(() => {
                 setIsMakingRequest(false);
@@ -84,9 +87,18 @@ const ComingSoon = () => {
                 <div className="email-input-wrapper">
                     <label htmlFor="emailAddress">Find out when the journey begins </label>
                     <div className="email-container">
+                        <div className={failedToSignUp ? 'alert-error' : ''}>
+                            {
+                                msg ? 
+                                    <div className={'signup-message ' + failedToSignUp ? 'error' : ''}>
+                                        { msg }
+                                    </div>
+                                    : null
+                            }
+                        </div>
                         <input 
                             id="emailAddress" 
-                            className={isEmailValid ? '' : 'invalid'}
+                            className={!failedToSignUp ? '' : 'invalid'}
                             type="email" 
                             placeholder="Enter you email" 
                             value={email} 
@@ -94,14 +106,6 @@ const ComingSoon = () => {
                         />
                         <Button className='signup-btn' label="Sign Up" enabled={isBtnEnabled} onClick={handleSignUp}/>
                     </div>
-                    {
-                        msg ? 
-                            <div className="signup-message">
-                                { msg }
-                            </div>
-                            : null
-                    }
-                    
                 </div>
                 
             </div>

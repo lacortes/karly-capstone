@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const ComingSoon = () => {
     const [ email, setEmail ] = useState('');
-    const [ isEmailValid, setEmailValid ] = useState(false);
     const [ isBtnEnabled, setBtnEnabled ] = useState(false);
     const [ isMakingRequest, setIsMakingRequest ] = useState(false);
     const [ msg, setMsg ] = useState('');
@@ -15,10 +14,8 @@ const ComingSoon = () => {
         const emailRaw = e.target.value.trim();
         if ( !validator.isEmpty(emailRaw) && validator.isEmail(emailRaw) ) {
             setBtnEnabled(true);
-            setEmailValid(true);
         } else {
             setBtnEnabled(false);
-            setEmailValid(false);
         }
         setEmail(emailRaw);
         setMsg('');
@@ -89,9 +86,18 @@ const ComingSoon = () => {
                 <div className="email-input-wrapper">
                     <label htmlFor="emailAddress">Find out when the journey begins </label>
                     <div className="email-container">
+                        <div className={failedToSignUp ? 'alert-error' : ''}>
+                            {
+                                msg ? 
+                                    <div className={'signup-message ' + failedToSignUp ? 'error' : ''}>
+                                        { msg }
+                                    </div>
+                                    : null
+                            }
+                        </div>
                         <input 
                             id="emailAddress" 
-                            className={(isEmailValid && !failedToSignUp) ? '' : 'invalid'}
+                            className={!failedToSignUp ? '' : 'invalid'}
                             type="email" 
                             placeholder="Enter you email" 
                             value={email} 
@@ -99,14 +105,6 @@ const ComingSoon = () => {
                         />
                         <Button className='signup-btn' label="Sign Up" enabled={isBtnEnabled} onClick={handleSignUp}/>
                     </div>
-                    {
-                        msg ? 
-                            <div className={'signup-message ' + failedToSignUp ? 'error' : ''}>
-                                { msg }
-                            </div>
-                            : null
-                    }
-                    
                 </div>
                 
             </div>

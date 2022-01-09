@@ -96,15 +96,17 @@ const ComingSoon = () => {
                                     : null
                             }
                         </div>
-                        <input 
-                            id="emailAddress" 
-                            className={!failedToSignUp ? '' : 'invalid'}
-                            type="email" 
-                            placeholder="Enter you email" 
-                            value={email} 
-                            onChange={updateEmail}
-                        />
-                        <Button className='signup-btn' label="Sign Up" enabled={isBtnEnabled} onClick={handleSignUp}/>
+                        <div>
+                            <input 
+                                id="emailAddress" 
+                                className={!failedToSignUp ? '' : 'invalid'}
+                                type="email" 
+                                placeholder="Enter you email" 
+                                value={email} 
+                                onChange={updateEmail}
+                            />
+                            <Button className='signup-btn' label="Sign Up" enabled={isBtnEnabled} onClick={handleSignUp}/>
+                        </div>
                     </div>
                 </div>
                 

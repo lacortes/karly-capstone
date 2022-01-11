@@ -98,8 +98,7 @@
             padding: rem(10);
         }
 
-        .invalid
-        {
+        .invalid {
             border: 1px solid #ff002f;
         }
 
@@ -112,6 +111,7 @@
             input {
                 margin-right: unset;
                 margin-bottom: rem(15);
+                border-radius: 5px;
             }
 
             input, button {
@@ -130,11 +130,10 @@
     }
 
     .error {
-        color: white;
+        color: #fccece;
     }
 
     .alert-error {
-        background-color: #ff002f;
         justify-content: flex-end;
         align-self: flex-start;
         width: rem(500);

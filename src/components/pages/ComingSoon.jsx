@@ -15,6 +15,7 @@ const ComingSoon = () => {
         const emailRaw = e.target.value.trim();
         if ( !validator.isEmpty(emailRaw) && validator.isEmail(emailRaw) ) {
             setBtnEnabled(true);
+            setFailedToSignUp(false);
         } else {
             setBtnEnabled(false);
         }
@@ -31,32 +32,29 @@ const ComingSoon = () => {
         axios.post(`${ API_ROOT }/api/email-sign-up`
             , { email }
             , { timeout: 10000 }
-        )
-            .then( resp => {
-                const { status } = resp;
-                if (status === 201) {
-                    setFailedToSignUp(false);
-                    setMsg('You will be notified once the site is up!');
-                } else {
-                    setFailedToSignUp(true);
-                    setMsg('Email is currently signed up');
-                }
-            })
-            .catch(err => {
-                const resp = err.toJSON();
-                const status = resp.status;
-
-                if ( status === 400 ) {
-                    setBtnEnabled(false);
-                    setMsg('Invalid Email!');
-                } else {
-                    setMsg('Currently no longer accepting new sign-ups.');
-                }
+        ).then( resp => {
+            const { status } = resp;
+            if (status === 201) {
+                setFailedToSignUp(false);
+                setMsg('You will be notified once the site is up!');
+            } else {
                 setFailedToSignUp(true);
-            })
-            .finally(() => {
-                setIsMakingRequest(false);
-            })
+                setMsg('Email is currently signed up');
+            }
+        }).catch(err => {
+            const resp = err.toJSON();
+            const status = resp.status;
+
+            if ( status === 400 ) {
+                setBtnEnabled(false);
+                setMsg('Invalid Email!');
+            } else {
+                setMsg('Currently no longer accepting new sign-ups.');
+            }
+            setFailedToSignUp(true);
+        }).finally(() => {
+            setIsMakingRequest(false);
+        })
         ;
 
         setBtnEnabled(false);

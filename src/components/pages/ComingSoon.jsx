@@ -84,8 +84,8 @@ const ComingSoon = () => {
 
                 <div className="email-input-wrapper">
                     <label htmlFor="emailAddress">Find out when the journey begins </label>
-                    <div className="email-container">
-                        <div className={failedToSignUp ? 'alert-error' : ''}>
+                    <div className='email-input-container'>
+                        <div className={`input-msg ${failedToSignUp ? ' alert-error ' : ''}`}>
                             {
                                 msg ? 
                                     <div className={'signup-message ' + failedToSignUp ? 'error' : ''}>
@@ -94,10 +94,9 @@ const ComingSoon = () => {
                                     : null
                             }
                         </div>
-                        <div>
+                        <div className="email-container">
                             <input 
                                 id="emailAddress" 
-                                className={!failedToSignUp ? '' : 'invalid'}
                                 type="email" 
                                 placeholder="Enter you email" 
                                 value={email} 

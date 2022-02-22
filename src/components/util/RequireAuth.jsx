@@ -19,11 +19,22 @@ const RequireAuth = ({ children }) => {
     const [ isLoading, setIsLoading ] = useState(true);
     
     useEffect(() => {
+        if (auth.isLoggedIn() === false) {
+            auth.refreshToken()
+                .then(() => setLoggedIn(true))
+                .catch(() => setLoggedIn(false))
+                .finally(() => setIsLoading(false))
+            ;
+            return;
+        }
+        
         auth.isAuthorized()
             .then(() => { 
+                setLoggedIn(true);
+            })
+            .catch(() => {
                 setLoggedIn(false);
             })
-            .catch( )
             .finally(() => setIsLoading(false))
         ;
     }, [ auth ]);

@@ -18,8 +18,13 @@ module.exports = env => {
             clean: true
         },
         devServer: {
-            port: 3010,
-            historyApiFallback: true
+            port: 3000,
+            historyApiFallback: true,
+            host: 'karly-capstone.dev',
+            https: {
+                key: './ssl/karly-capstone.dev-key.pem',
+                cert: './ssl/karly-capstone.dev.pem'
+            }
         },
         module: {
             rules: [

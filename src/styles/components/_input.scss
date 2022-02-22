@@ -1,0 +1,33 @@
+.input-field {
+    position: relative;
+
+    input {
+        width: 100%;
+        padding: rem(5);
+        border: none;
+        outline: none;
+        border-bottom: rem(2) solid #8b8b8b;
+    }
+
+    input:valid,
+    input:focus {
+        border-color: #FC6565;
+        & ~ label {
+            font-size: $font-size-s;
+            top: 0;
+            transform: translateY(-60%);
+            color: #FC6565;
+            font-weight: 400;
+        }
+    }   
+
+    label {
+        position: absolute;
+        color: #7c7c7c;
+        left: rem(5);
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.2s ease-in;
+        cursor: text;
+    }
+}

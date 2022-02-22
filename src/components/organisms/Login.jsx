@@ -49,10 +49,9 @@ const Login = ({ showSpinner }) => {
         auth.signInUser(email, pass)
             .then(() => {
                 navigate('/');
-            }).catch(status => {
-                if (status === 401) {
-                    setBtnEnabled(true);
-                }
+            }).catch(err => {
+                console.log(err);
+                
             }).finally(() => {
                 showSpinner(false);
             });

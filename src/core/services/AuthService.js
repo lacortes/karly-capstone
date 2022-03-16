@@ -4,12 +4,22 @@ import jwt from './JwtService';
 
 const baseUrl = `${ API_ROOT }/auth`;
 let timeoutID;
+
+const loggedInUser = (() => {
+    let admin = null;
+
+    const setAdmin = bool => admin = bool;
+    const isAdmin = () => admin;
+
+    return Object.freeze({ setAdmin, isAdmin });
+})();
+
+
 const signInUser = async (email='', pass='') => {
     try {
         const resp = await axios.post(baseUrl + '/login', { email, pass }, { withCredentials: true });
 
         setTokenFromResponse(resp);
-
         return Promise.resolve();
     } catch (err) {
         let msg = '';
@@ -25,9 +35,24 @@ const signInUser = async (email='', pass='') => {
     }  
 };
 
+const isAdmin = async () => {
+    if (loggedInUser.isAdmin() === null) {
+        
+        try {
+            const { isAdmin } = await isAuthorized();
+            loggedInUser.setAdmin(isAdmin === true);
+        } catch (err) {
+            loggedInUser.setAdmin(false);
+        }
+        
+    }
+    return loggedInUser.isAdmin();
+};
+
 const isAuthorized = async () => {
+    let resp;
     try {
-        await axios.get(
+        resp = await axios.get(
             baseUrl + '/is-authorized', 
             { 
                 withCredentials: true, 
@@ -37,7 +62,7 @@ const isAuthorized = async () => {
     } catch (err) {
         return Promise.reject(err);
     }
-    return Promise.resolve();
+    return Promise.resolve(resp.data);
 };
 
 const isLoggedIn = () => {
@@ -93,5 +118,6 @@ export {
     signInUser,
     isAuthorized,
     isLoggedIn, 
-    refresh
+    refresh, 
+    isAdmin
 };

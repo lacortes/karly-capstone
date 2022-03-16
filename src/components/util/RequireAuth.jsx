@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
-import Spinner from '../atoms/Spinner';
-
-const LoadingScreen = ({ show }) => {
-    return (
-        <div className='loading-screen'>
-            <div className='overlay'></div>
-            <Spinner show={ show }/>
-        </div>
-    );
-};
+import LoadingScreen from '../organisms/Spinner';
 
 const RequireAuth = ({ children }) => {
     const auth = useAuth();

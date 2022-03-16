@@ -2,16 +2,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Admin from './pages/Admin';
 import UserEntry from './pages/UserEntry';
 import NotFound from './pages/NotFound';
 import AuthProvider from './util/AuthProvider';
 import RequireAuth from './util/RequireAuth';
-
-// const lock = () => {
-//     const locked = true;
-//     const isLocked = () => locked;
-//     return { isLocked };
-// };
  
 const App = () => {
     
@@ -27,6 +22,11 @@ const App = () => {
                             </RequireAuth>
                         }
                     />
+                    <Route path="/admin" element={ 
+                        <RequireAuth>
+                            <Admin />
+                        </RequireAuth>
+                    }/>
                     <Route path="/login" element={ <UserEntry/> }/>
                     <Route path="*" element={ <NotFound /> }/>
                 </Routes>

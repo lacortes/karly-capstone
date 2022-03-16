@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { signInUser, isAuthorized, isLoggedIn, refresh as refreshToken } from '../../core/services/AuthService';
+import { signInUser, isAuthorized, isLoggedIn, refresh as refreshToken, isAdmin } from '../../core/services/AuthService';
 
 export const AuthContext = React.createContext(null);
 export const useAuth = () => {
@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{ 
-            signInUser, isLoggedIn, isAuthorized, refreshToken 
+            signInUser, isLoggedIn, isAuthorized, refreshToken, isAdmin 
         }}>
             { children }
         </AuthContext.Provider>

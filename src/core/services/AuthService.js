@@ -49,6 +49,27 @@ const isAdmin = async () => {
     return loggedInUser.isAdmin();
 };
 
+const magicLinkSignIn = async (token) => {
+    try {
+        const resp = await axios.post(baseUrl + '/magic', { token }, { withCredentials: true });
+
+        setTokenFromResponse(resp);
+
+        return Promise.resolve();
+    } catch (err) {
+        let msg = '';
+        if (err.response) {
+            const resp = err.response;
+            msg = resp.data.message;
+        } else {
+            msg = 'Server error!';                
+        }
+
+        jwt.deleteToken();
+        return Promise.reject(msg);
+    }  
+};
+
 const isAuthorized = async () => {
     let resp;
     try {
@@ -119,5 +140,6 @@ export {
     isAuthorized,
     isLoggedIn, 
     refresh, 
-    isAdmin
+    isAdmin,
+    magicLinkSignIn
 };

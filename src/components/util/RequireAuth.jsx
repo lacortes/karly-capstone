@@ -1,39 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from './AuthProvider';
+import useCheckAuth from '../../hooks/CheckAuth';
 import LoadingScreen from '../organisms/Spinner';
 
 const RequireAuth = ({ children }) => {
-    const auth = useAuth();
     const location = useLocation();
-    const [ isLoggedIn, setLoggedIn ] = useState(false);
-    const [ isLoading, setIsLoading ] = useState(true);
-    
-    useEffect(() => {
-        if (auth.isLoggedIn() === false) {
-            auth.refreshToken()
-                .then(() => setLoggedIn(true))
-                .catch(() => setLoggedIn(false))
-                .finally(() => setIsLoading(false))
-            ;
-            return;
-        }
-        
-        auth.isAuthorized()
-            .then(() => { 
-                setLoggedIn(true);
-            })
-            .catch(() => {
-                setLoggedIn(false);
-            })
-            .finally(() => setIsLoading(false))
-        ;
-    }, [ auth ]);
+    const authStatus = useCheckAuth();
 
     return (
         ( 
-            isLoading === true ? <LoadingScreen show={isLoading} /> 
-                : isLoggedIn === true ? children 
+            authStatus.isLoading === true ? <LoadingScreen show={authStatus.isLoading} /> 
+                : authStatus.isLoggedIn === true ? children 
                     : <Navigate to="/login" state={{ from: location }} />
         )
     );

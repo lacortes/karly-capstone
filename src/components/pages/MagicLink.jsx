@@ -33,6 +33,7 @@ const MagicLink = () => {
                     setShowSpinner(false);
                 });
         }
+        return () => setShowSpinner(false);
     }, [ auth, authStatus, navigate, query ]);
 
     return (

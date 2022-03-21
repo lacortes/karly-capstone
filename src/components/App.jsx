@@ -7,9 +7,9 @@ import UserEntry from './pages/UserEntry';
 import NotFound from './pages/NotFound';
 import AuthProvider from './util/AuthProvider';
 import RequireAuth from './util/RequireAuth';
+import MagicLink from './pages/MagicLink';
  
 const App = () => {
-    
     return (
 
         <AuthProvider>
@@ -28,6 +28,8 @@ const App = () => {
                         </RequireAuth>
                     }/>
                     <Route path="/login" element={ <UserEntry/> }/>
+                    <Route path="/magic" 
+                        element={ <MagicLink/>  } />
                     <Route path="*" element={ <NotFound /> }/>
                 </Routes>
             </BrowserRouter>

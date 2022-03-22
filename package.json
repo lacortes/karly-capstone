@@ -4,8 +4,8 @@
   "description": "React JS Blueprint",
   "main": "index.js",
   "engines": {
-    "node": ">=16.13.0",
-    "npm": "~8.1.0"
+    "node": ">=16.14.x",
+    "npm": "~8.5.x"
   },
   "scripts": {
     "start": "webpack serve --open --env mode=development",

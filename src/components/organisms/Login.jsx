@@ -60,11 +60,13 @@ const Login = ({ showSpinner }) => {
     return (
         <div className="login-wrapper">
             <h1>Login</h1>
-            <div>
-                <input type="email" placeholder="Email" value={email} onChange={updateEmail}/>    
-                <input type="password" placeholder="Password" value={pass} onChange={updatePass}/>
-            </div>
-            <Button className="entry-btn" label="Sign in" enabled={isBtnEnabled} onClick={handleSignIn}/>            
+            <form >
+                <div>
+                    <input type="email" placeholder="Email" value={email} onChange={updateEmail}/>    
+                    <input type="password" placeholder="Password" value={pass} onChange={updatePass}/>
+                </div>
+                <Button className="entry-btn" label="Sign in" enabled={isBtnEnabled} onClick={handleSignIn}/>            
+            </form>
         </div>
     );
 };

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { API_ROOT } from '../../core/config/environment';
 
-const RequestAccess = () => {
+const RequestAccess = ({ showSpinner }) => {
     const [ email, setEmail ] = useState('');
     const [ firstName, setFirstName ] = useState('');
     const [ lastName, setLastName ] = useState('');
@@ -30,6 +30,7 @@ const RequestAccess = () => {
 
         setMakingRequest(true);
         setBtnEnabled(false);
+        showSpinner(true);
         axios.post(API_ROOT + '/api/request-access', { email, first_name: firstName, last_name: lastName })
             .then(resp => {
                 setRespMsg({
@@ -53,7 +54,10 @@ const RequestAccess = () => {
                 });
                 
             })
-            .finally(() => setMakingRequest(false))
+            .finally(() => {
+                setMakingRequest(false);
+                showSpinner(false);
+            })
         ;
     };
 

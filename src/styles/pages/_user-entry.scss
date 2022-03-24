@@ -1,20 +1,59 @@
+@mixin shadow {
+    box-shadow: rem(5) rem(5) 10px rgba(0, 0, 0, 0.25);
+}
+
 .user-entry-wrapper {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    background: linear-gradient(0deg, rgba(207,110,162,0.8323704481792717) 5%, rgba(252,101,101,1) 100%);
+    background-color: $light;
+}
+
+.logo {
+    margin-top: rem(150);
+    width: rem(190);
+    height: rem(144);
+    margin-bottom: rem(50);
+
+    @include media("height<1000px") {
+        margin-top: rem(20);
+    }
+    
 }
 
 .user-entry-container {
     width: rem(500);
     height: rem(500);
-    border: rem(1) solid #cfcfcf;
     border-radius: 5px;
-    padding: rem(15);
     background-color: #ffffff;
+    z-index: 2;
     position: relative;
+
+    .foreground-drop {
+        @include shadow;
+        width: inherit;
+        height: inherit;
+        background-color: $white;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        padding: rem(15);
+    }
+
+    .background-drop {
+        position: absolute;
+        background-color: $primary;
+        width: inherit;
+        height: inherit;
+        z-index: 1;
+        left: rem(16);
+        top: rem(14);
+        @include shadow;
+    }
 
     .buttons-container {
         display: flex;

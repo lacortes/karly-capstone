@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ id='', label='', className='', enabled=true, onClick=()=>{} }) => {
+const Button = ({ id='', label='', className='', enabled=true, propogate=true, onClick=()=>{} }) => {
     return (
         <button
             id={id}
@@ -11,6 +11,11 @@ const Button = ({ id='', label='', className='', enabled=true, onClick=()=>{} })
                     console.log('cannot click');
                     return;
                 }
+
+                if (propogate === false) {
+                    e.stopPropagation();
+                }
+
                 onClick(e);
             }}
             disabled={enabled === true ? false : true}

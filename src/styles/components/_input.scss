@@ -31,3 +31,49 @@
         cursor: text;
     }
 }
+
+.input-with-icon {
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: $light;
+    border-bottom: rem(2) solid $primary-accent;
+    
+    &:focus-within {
+        border: rem(2) solid $primary-accent;
+    }
+
+    .input-icon {
+        color: $text-light;
+        margin-left: rem(10);
+        font-size: rem(18);
+    }
+
+    input {
+        height: 100%;
+        width: 100%;
+        padding: rem(10);
+        border: none;
+        outline: none;
+        background-color: $light;
+        color: $text-primary;
+    }
+
+    input::focus {
+        border: none;
+        outline: none;
+    }
+
+    input::placeholder {
+        color: $text-light;
+    }
+
+}
+
+.form-text-field {
+    background-color: $light;
+
+    label {
+        color: $text-primary;
+    }
+}

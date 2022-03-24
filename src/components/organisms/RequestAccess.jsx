@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../atoms/Button';
-import validator from 'validator';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey } from '@fortawesome/free-solid-svg-icons';
 import { API_ROOT } from '../../core/config/environment';
+import validator from 'validator';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
 
-const RequestAccess = () => {
+
+const RequestAccess = ({ showSpinner, setIsLoggedIn }) => {
     const [ email, setEmail ] = useState('');
     const [ firstName, setFirstName ] = useState('');
     const [ lastName, setLastName ] = useState('');
@@ -30,6 +31,7 @@ const RequestAccess = () => {
 
         setMakingRequest(true);
         setBtnEnabled(false);
+        showSpinner(true);
         axios.post(API_ROOT + '/api/request-access', { email, first_name: firstName, last_name: lastName })
             .then(resp => {
                 setRespMsg({
@@ -53,7 +55,10 @@ const RequestAccess = () => {
                 });
                 
             })
-            .finally(() => setMakingRequest(false))
+            .finally(() => {
+                setMakingRequest(false);
+                showSpinner(false);
+            })
         ;
     };
 
@@ -75,51 +80,45 @@ const RequestAccess = () => {
     const updateEmail = e => {
         updateField(e.target.value, setEmail, setEmailValid, validator.isEmail);
     };
+ 
+    const handleSignIn = () => {
+        if (isMakingRequest === true) {
+            return;
+        }
+
+        setIsLoggedIn(true);
+    };
+
+    const onSubmit = e => {
+        e.preventDefault();
+        handleRequestAccess();
+    };
 
     return (
         <>
             <div className="request-access-wrapper"> 
+                <h1>Request Access</h1>
 
-                <div className='lock-icon-wrapper'>
-                    <FontAwesomeIcon className='lock-icon' icon={faKey}/>
-                </div>
-
-                <div className="input-field">
-                    <input 
-                        id="firstName"
-                        type="text"
-                        value={firstName}
-                        onChange={updateFirstName}
-                        required
-                    />
-                    <label htmlFor="firstName">First Name</label>
-                </div>
-                <div className="input-field">
-                    <input 
-                        id="lastName"
-                        type="text"
-                        value={lastName}
-                        onChange={updateLastName}
-                        required
-                    />
-                    <label htmlFor="lastName">Last Name</label>
-                </div>
-                <div className="input-field">
-                    <input 
-                        id="requestAccessEmail" 
-                        type="email" 
-                        value={email}
-                        onChange={updateEmail}
-                        required
-                    />
-                    <label htmlFor="requestAccessEmail">Email</label>
-                </div>
-                <Button className="entry-btn" id="requestAccessBtn"  label={'Request Access'} enabled={btnEnabled} onClick={handleRequestAccess}/>
-                
-                <div className={ `response-msg ${ respMsg.isError === true ? 'error-msg' : ''}` }>
-                    {respMsg.msg}
-                </div>
-
+                <form noValidate autoComplete="off" onSubmit={onSubmit}>
+                    <div className="input-with-icon">
+                        <FontAwesomeIcon className="input-icon" icon={faUser}/>
+                        <input type="text" placeholder="First Name" value={firstName} onChange={updateFirstName} required/>
+                    </div>
+                    <div className="input-with-icon">
+                        <FontAwesomeIcon className="input-icon" icon={faUser}/>
+                        <input type="text" placeholder="Last Name" value={lastName} onChange={updateLastName} required/>
+                    </div>
+                    <div className="input-with-icon">
+                        <FontAwesomeIcon className="input-icon" icon={faEnvelope}/>
+                        <input type="text" placeholder="Email" value={email} onChange={updateEmail} required/>
+                    </div>
+    
+                    <Button className="entry-btn filled" id="requestAccessBtn"  label={'Request Access'} enabled={btnEnabled} />
+                    <Button className="entry-request-access-btn outlined" label="Sign In" enabled={true} propogate={false} onClick={handleSignIn}/>
+                    <div className={ `response-msg ${ respMsg.isError === true ? 'error-msg' : ''}` }>
+                        {respMsg.msg}
+                    </div>
+                </form>
             </div>
         </>
     );

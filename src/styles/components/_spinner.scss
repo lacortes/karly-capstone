@@ -1,6 +1,6 @@
 .spinner {
     margin: 0 auto 0;
-    width: rem(70);
+    width: rem(100);
     text-align: center;
     visibility: hidden;
     position: absolute;
@@ -11,9 +11,9 @@
 }
   
 .spinner > div {
-    width: rem(18);
-    height: rem(18);
-    background-color: #6565FC;
+    width: rem(22);
+    height: rem(22);
+    background-color: #4F0113;
 
     border-radius: 100%;
     display: inline-block;

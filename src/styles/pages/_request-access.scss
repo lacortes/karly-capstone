@@ -3,37 +3,35 @@
     flex-direction: column;
     align-items: center;
 
-    .lock-icon-wrapper {
-        height: rem(70);
-        width: rem(70);
-        // border: rem(1.5) solid #FC6565;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: rem(20);
-        margin-bottom: rem(30);
-        background-color: #FC6565;
+    h1 {
+        margin-top: rem(30);
+        margin-bottom: rem(40);
+        font-weight: 500;
+        color: $text-primary;
+    }
 
-        .lock-icon {
-            color: #ffffff;
-            font-size: rem(38);
+    form {
+        padding-left: rem(20);
+        padding-right: rem(20);
+
+        .input-with-icon:not(:last-of-type),
+        button:first-of-type {
+            margin-bottom: rem(20);
+        }
+
+        .input-with-icon:last-of-type {
+            margin-bottom: rem(50);
         }
     }
 
-    .input-field {
-        width: rem(350);
-        margin-bottom: rem(20);
-    }
-
     .response-msg {
-        margin-top: rem(10);
-        font-size: $font-size;
-        font-weight: 505;
-        color: #6565FC;
+        color: $text-primary;
+        font-weight: 450;
+        text-align: center;
+        margin-top: rem(5);
 
         &.error-msg {
-            color: red;
+            color: $text-error;
         }
     }
 }

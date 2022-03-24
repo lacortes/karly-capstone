@@ -10,11 +10,28 @@
         color: $text-primary;
     }
 
-    input {
-        display: block;
-        padding: rem(5);
-        width: rem(350);
-        min-width: rem(350);
-        margin-bottom: rem(20);
+    form {
+        padding-left: rem(20);
+        padding-right: rem(20);
+
+        .input-with-icon:first-of-type,
+        button:first-of-type {
+            margin-bottom: rem(20);
+        }
+
+        .input-with-icon:last-of-type {
+            margin-bottom: rem(50);
+        }
+    }
+
+    .response-msg {
+        color: $text-primary;
+        font-weight: 450;
+        text-align: center;
+        margin-top: rem(5);
+
+        &.error-msg {
+            color: $text-error;
+        }
     }
 }

@@ -1,4 +1,9 @@
 button {
+    text-decoration: none;
+    height: rem(45);
+    min-width: rem(350);
+    padding: rem(5);
+
     &:hover {
         cursor: pointer;
     }
@@ -8,24 +13,35 @@ button {
     }
 }
 
-button.entry-btn {
+button.filled {
+    background-color: $primary-accent;
     border: none;
-    text-decoration: none;
-    width: rem(350);
-    min-width: rem(350);
-    padding: rem(5);
-    border-radius: 5px;
-    background-color: #FC6565;
-    color: #ffffff;
-    margin-top: rem(15);
-
+    font-weight: 500;
+    
     &:hover {
-        background-color: #FF4D4D;
+        background-color: $primary;
     }
+}
 
-    &:disabled {
-        background-color: #ff4d4d5d;
+button.outlined {
+    background-color: $white;
+    border: rem(2) solid $text-light;
+    font-weight: 450;
+    
+    &:hover {
+        border-color: #d8cece;
+        background-color: $light;
     }
+}
+
+button.entry-btn {
+    width: 100%;
+    color: $text-primary;    
+}
+
+button.entry-request-access-btn {
+    width: 100%;
+    color: $text-primary;
 }
 
 button.signup-btn {

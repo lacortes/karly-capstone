@@ -9,9 +9,12 @@ $font-size-xxs: rem(9);
 
 $white: #FFFFFF;
 $primary: #FEDBCF;
+$primary-accent: #FDB8AB;
 $secondary: #F0CAC0;
 $dark: #55433C;
 $light: #FEEFE8;
 $white: #ffffff;
 
-$text-primary: #55433C;
+$text-primary: $dark;
+$text-light: #A79087;
+$text-error: #f87055;

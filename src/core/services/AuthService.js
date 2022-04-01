@@ -46,7 +46,7 @@ const isAdmin = async () => {
         }
         
     }
-    return loggedInUser.isAdmin();
+    return Promise.resolve(loggedInUser.isAdmin());
 };
 
 const magicLinkSignIn = async (token) => {

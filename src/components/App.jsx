@@ -1,4 +1,3 @@
-// import '../styles/app.scss';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -8,6 +7,7 @@ import NotFound from './pages/NotFound';
 import AuthProvider from './util/AuthProvider';
 import RequireAuth from './util/RequireAuth';
 import MagicLink from './pages/MagicLink';
+import ToEntryPage from './util/ToEntryPage';
  
 const App = () => {
     return (
@@ -27,7 +27,11 @@ const App = () => {
                             <Admin />
                         </RequireAuth>
                     }/>
-                    <Route path="/login" element={ <UserEntry/> }/>
+                    <Route path="/login" element={ 
+                        <ToEntryPage>
+                            <UserEntry/> 
+                        </ToEntryPage>
+                    }/>
                     <Route path="/magic" 
                         element={ <MagicLink/>  } />
                     <Route path="*" element={ <NotFound /> }/>

@@ -22,6 +22,8 @@ import Leadership from './pages/Leadership';
 import SocialJustice from './pages/SocialJustice';
 import StudentLearnDev from './pages/StudentLearnDev';
 import Technology from './pages/Technology';
+import References from './pages/References';
+import Acknowledgements from './pages/Acknowledgements';
  
 const App = () => {
     return (
@@ -68,6 +70,18 @@ const App = () => {
                         element={ 
                             <RequireAuth>
                                 <ResumePage />
+                            </RequireAuth>
+                        }
+                    />
+                    <Route path="/references" element={
+                        <RequireAuth>
+                            <References />
+                        </RequireAuth>
+                    }/>
+                    <Route path="/acknowledgements"
+                        element={
+                            <RequireAuth>
+                                <Acknowledgements/> 
                             </RequireAuth>
                         }
                     />

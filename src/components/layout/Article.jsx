@@ -1,4 +1,5 @@
 import React, { Children } from 'react';
+import Button from '../atoms/Button';
 
 export const Artifact = ({ children }) => {
     return (
@@ -16,12 +17,20 @@ export const Reference = ({ children }) => {
     );
 };
 
-export const ReferencesBlock = ({ children }) => {
+export const ReferencesBlock = ({ children, handleViewArtifact }) => {
     const count = Children.count( children );
     const name = count < 2 ? 'Reference' : 'References';
     return (
         <>
-            <SmallTitle text={name}/>
+            <div className='references-header-wrapper'>
+                <SmallTitle text={name}/>
+                <Button 
+                    label='View Artifact' 
+                    className='outlined'
+                    onClick={handleViewArtifact}
+                />
+            </div>
+
             <div className='references-wrapper'>
                 { children }
             </div>

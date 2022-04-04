@@ -85,8 +85,8 @@ const NavBar = () => {
                             </li>
                         </ul>
                     </li>
-                    <li className='nav-item'>References</li>
-                    <li className='nav-item'>Acknowledgements</li>
+                    <li className='nav-item'><Link to="/references">References</Link></li>
+                    <li className='nav-item'><Link to="/acknowledgements">Acknowledgements</Link></li>
                 </ul>
             </nav>
         </>

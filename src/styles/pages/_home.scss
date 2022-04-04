@@ -21,6 +21,7 @@ header {
     .middle-horizontal {
         display: flex;
         align-items: center;
+        height: 62%;
     }
 }
 
@@ -148,14 +149,14 @@ header {
 .bounce {
     border: 2px solid #ffac90;
     margin: 0 auto;
-    width: rem(75);
-    height: rem(75);
+    width: rem(55);
+    height: rem(55);
     border-radius: 50%;
     display: flex;
     justify-content: center;
 
     .arrow-down-icon {
-        font-size: rem(70);
+        font-size: rem(50);
         color: #ffac90;
     }
 
@@ -184,6 +185,7 @@ header {
 }
 
 .about-me-section {
+    padding-bottom: rem(100);
     .img-container {
         display: flex;
         justify-content: center;

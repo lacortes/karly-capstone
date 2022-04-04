@@ -1,4 +1,4 @@
-const API_ROOT = process.env.API_ROOT;
+let API_ROOT = 'https://api.karly-capstone.com';
 
 export {
     API_ROOT

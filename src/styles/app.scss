@@ -10,10 +10,17 @@
 @import './core/reset';
 @import './core/reset-include-media';
 
+// Layout
+@import './layout/base-layout';
+@import './layout/article';
+@import './layout/competencies';
+
 // Components
 @import './components/buttons';
 @import './components/spinner';
 @import './components/input';
+@import './components/navbar';
+@import './components/pdf-viewer';
 
 // Pages
 @import './pages/home';
@@ -22,5 +29,4 @@
 @import './pages/request-access';
 @import './pages/login';
 @import './pages/loading-screen';
-
-// Layout
+@import './pages//resume';

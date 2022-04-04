@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ id='', label='', className='', enabled=true, propogate=true, onClick=()=>{} }) => {
+const Button = ({ children, id='', label='', className='', enabled=true, propogate=true, onClick=()=>{} }) => {
     return (
         <button
             id={id}
@@ -21,6 +21,7 @@ const Button = ({ id='', label='', className='', enabled=true, propogate=true, o
             disabled={enabled === true ? false : true}
         >
             {label}
+            {children}
         </button>
     );
 };

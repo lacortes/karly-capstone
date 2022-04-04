@@ -8,7 +8,7 @@ import ToLandingPage from './components/util/ToLandingPage';
 
 const container = document.querySelector('#root');
 
-const comingSoon = true;
+const comingSoon = false;
 let component = null;
 if (comingSoon) {
     component = (

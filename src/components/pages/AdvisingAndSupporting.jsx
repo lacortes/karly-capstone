@@ -18,7 +18,9 @@ const AdvisingAndSupporting = () => {
                     In this competency, I demonstrated my willingness to grow and learn as a higher education professional when counseling and supporting students in their educational journey. 
                     </p>
 
-                    <ReferencesBlock>
+                    <ReferencesBlock
+                        handleViewArtifact={() => window.open('https://docs.google.com/document/d/1EiTYAQ0lXBrw-XGjmr5w_W51AX_XN7ka/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true', '_blank')}
+                    >
                         <Reference>
                             <p>Reynolds, A.L. (2009). Helping college students: Developing essential support skills for student affairs practice. Jossey-Bass.</p>
                         </Reference>
@@ -35,7 +37,9 @@ const AdvisingAndSupporting = () => {
                     I was able to maintain an appropriate degree of confidentiality and know when confidentiality should be broken to protect the students and others.
                     </p>
 
-                    <ReferencesBlock>
+                    <ReferencesBlock
+                        handleViewArtifact={() => window.open('https://docs.google.com/document/d/1TqmxJxrB2BjFs_BHp_A5QMMFDzMGDrXP/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true', '_blank')}
+                    >
                         <Reference>
                             <p>
                             Pipkins, K.C., Rooney, G.S. &amp; Jaunarajs, I. (2014). Back to the basics: Career counseling. In K. Smith (Ed). New Directions for Student Services: No. 148. Strategic directions for career services within the university setting (pp. 35-48). Jossey- Bass.
@@ -54,7 +58,9 @@ const AdvisingAndSupporting = () => {
                     I helped my team understand the strengths, goals, and the aftermath of writing the proposal, while instilling in them the power of hope and navigation of this difficult situation. I was able to appropriately challenge and support students in their concerns in their workplace.
                     </p>
 
-                    <ReferencesBlock>
+                    <ReferencesBlock
+                        handleViewArtifact={() => window.open('https://docs.google.com/document/d/1q2pP6W8hdZcNqnC_36D6m-QBovPjP0qwYeWZhblVKJo/edit?usp=sharing', '_blank')}
+                    >
                         <Reference>
                             <p>Reynolds, A.L. (2009). Helping college students: Developing essential support skills for student affairs practice. San Francisco: Jossey-Bass.</p>
                         </Reference>

@@ -55,6 +55,23 @@
     margin-bottom: rem(25);
 }
 
+.references-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        min-width: unset;
+        width: rem(175);
+        transition: background-color 0.2s ease-in,
+                    border-color 0.2s linear;
+
+        &.outlined:hover {
+            background-color: $primary;
+            border-color: $text-primary;
+        }
+    }
+}
+
 .references-wrapper {
     background-color: $light;
     width: 100%;

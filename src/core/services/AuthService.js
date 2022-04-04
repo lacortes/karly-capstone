@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { API_ROOT } from '../config/environment';
+// import { API_ROOT } from '../config/environment';
 import jwt from './JwtService';
 
-const baseUrl = `${ API_ROOT }/auth`;
+const baseUrl = 'https://api.karly-capstone.com/auth';
 let timeoutID;
 
 const loggedInUser = (() => {
@@ -17,6 +17,7 @@ const loggedInUser = (() => {
 
 const signInUser = async (email='', pass='') => {
     try {
+        console.log('base url: ' + baseUrl);
         const resp = await axios.post(baseUrl + '/login', { email, pass }, { withCredentials: true });
 
         setTokenFromResponse(resp);

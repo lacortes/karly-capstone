@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { createTheme, styled, ThemeProvider } from '@mui/material/styles';
 import { AppBar, Button, Container, CssBaseline, Snackbar, Stack, Typography } from '@mui/material';
 import { API_ROOT } from '../../core/config/environment';
 import { useAuth } from '../../components/util/AuthProvider';
+import { getResume } from '../../core/services/ResourceService';
 
 
 const apiURL = `${ API_ROOT }/api`;
@@ -52,11 +53,7 @@ const RealAdmin = () => {
 
     const handleViewResume = async () => {
         try {
-            const { data }  = await axios({
-                url: `${ apiURL }/resume-download`,
-                method: 'GET',
-                responseType: 'blob'
-            });
+            const data = await getResume();
 
             const url = window.URL.createObjectURL(new Blob( [ data ] ));
             const link = document.createElement('a');
@@ -130,18 +127,22 @@ const RealAdmin = () => {
 
 const Admin = () => {
     const [ isLoading, setLoading ] = useState(true);
+    const [ isAdmin, setAdmin ] = useState(false);
     const auth = useAuth();
     const navigate = useNavigate();
     
     useEffect(() => {
         auth.isAdmin()
-            .then(() => setLoading(false))
-            .catch(() => navigate('/', { replace: true }))
+            .then(setAdmin)
+            .catch(() => setAdmin(false))
+            .finally(() => setLoading(false))
         ;
     }, [ auth, navigate ]);
 
     return (
-        isLoading === true ? null : <RealAdmin />
+        isLoading === true ? null 
+            : isAdmin !== true ? <Navigate to="/" replace={true}/>
+                : <RealAdmin /> 
     );
 
 };

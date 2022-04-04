@@ -1,0 +1,101 @@
+.article-section {
+    height: 100%;
+
+    &.first {
+        padding-top: rem(100);
+    }
+
+    header {
+        background-color: $light;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: rem(72);
+        width: 100%;
+
+        .header-text {
+            font-size: $font-size-xxxl;
+            font-weight: 500;
+            line-height: rem(48);
+            color: $text-primary;
+        }
+    }
+
+    .header-line {
+        height: rem(5);
+        width: 100%;
+        background-color: $primary;
+        margin-top: rem(20);
+        margin-bottom: rem(75);
+    }
+
+    article {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .download-btn {
+        margin-top: rem(50);
+    }
+}
+
+.article-title {
+    width: 100%;
+    color: $text-light;
+    font-size: $font-size-xxl;
+    text-align: center;
+    margin-bottom: rem(50);
+}
+
+.article-small-title {
+    color: $text-light;
+    width: 100%;
+    text-align: center;
+    font-size: $font-size-xl;
+    margin-bottom: rem(25);
+}
+
+.references-wrapper {
+    background-color: $light;
+    width: 100%;
+    padding: rem(20);
+
+
+    .reference-content-wrapper {
+        font-size: $font-size-s;
+        font-weight: 300;
+
+        p {
+            margin: 0;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        a {
+            text-decoration: none;
+            color: $text-primary;
+        }
+
+        &:not(:last-child) p {
+            margin-bottom: rem(20);
+        }
+    }
+
+}
+
+.artifact {
+    margin-bottom: rem(100);
+
+    .article-title, 
+    .article-small-title {
+        text-align: left;
+    }
+
+    .article-title {
+        margin-bottom: rem(15);
+    }
+
+    .article-small-title {
+        font-weight: 400;
+    }
+}

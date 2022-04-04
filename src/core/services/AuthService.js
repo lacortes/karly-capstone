@@ -2,7 +2,7 @@ import axios from 'axios';
 import { API_ROOT } from '../config/environment';
 import jwt from './JwtService';
 
-const baseUrl = API_ROOT;
+const baseUrl = `${ API_ROOT }/auth`;
 let timeoutID;
 
 const loggedInUser = (() => {

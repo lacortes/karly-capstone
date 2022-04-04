@@ -1,8 +1,8 @@
 import axios from 'axios';
-// import { API_ROOT } from '../config/environment';
+import { API_ROOT } from '../config/environment';
 import jwt from './JwtService';
 
-const baseUrl = 'https://api.karly-capstone.com/auth';
+const baseUrl = API_ROOT;
 let timeoutID;
 
 const loggedInUser = (() => {

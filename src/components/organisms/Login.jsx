@@ -81,7 +81,7 @@ const Login = ({ showSpinner, setIsLoggedIn  }) => {
     
     return (
         <div className="login-wrapper">
-            <h1>Login Here</h1>
+            <h1>Login</h1>
             
             <form noValidate autoComplete="off" onSubmit={onSubmit}>
                 <div className="input-with-icon">

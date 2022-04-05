@@ -23,7 +23,7 @@ const Philosophy = () => {
                     My hope as a higher educational professional is to make everything I do intentional and purposeful, thus continuing that legacy that has been done many generations before me (Bolman, 2011).
                 </p>
 
-                <ReferencesBlock>
+                <ReferencesBlock hideButton={true}>
                     <Reference>
                         <p>Bolman, L.G. &amp; Deal, T.E. (2011). Leading with soul (3rd ed.). San Francisco: Jossey Bass.</p>
                     </Reference>

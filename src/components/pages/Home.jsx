@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import ProfilePic from '../../../assets/images/face-pic.png';
 import Logo from '../../../assets/images/logo-2.png';
 import CppLogo from '../../../assets/images/cpp-logo.png';
@@ -90,12 +88,6 @@ const Home = () => {
 
                 
                 <div className="filler-box">
-                    <div className="bounce">
-                        <FontAwesomeIcon className="arrow-down-icon" icon={faArrowDown}/>
-                    </div>
-                    <div className="follow-me">
-                        Learn More About Me
-                    </div>
                 </div>
 
             </div>

@@ -17,18 +17,23 @@ export const Reference = ({ children }) => {
     );
 };
 
-export const ReferencesBlock = ({ children, handleViewArtifact }) => {
+export const ReferencesBlock = ({ children, handleViewArtifact, hideButton=false }) => {
     const count = Children.count( children );
     const name = count < 2 ? 'Reference' : 'References';
     return (
         <>
             <div className='references-header-wrapper'>
                 <SmallTitle text={name}/>
-                <Button 
-                    label='View Artifact' 
-                    className='outlined'
-                    onClick={handleViewArtifact}
-                />
+                {
+                    hideButton === true 
+                        ? null 
+                        :
+                        <Button 
+                            label='View Artifact' 
+                            className='outlined'
+                            onClick={handleViewArtifact}
+                        />
+                }
             </div>
 
             <div className='references-wrapper'>

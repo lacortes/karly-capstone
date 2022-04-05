@@ -10,21 +10,14 @@ const PSEFoundations = () => {
         <BaseLayout> 
             <Article headerTitle='Personal, Spiritual, & Ethical Foundations'>
                 <Artifact>
-                    <Title text='Helping Theory'/>
-                    <p>
-                    According to Reynolds (2009), as long as there are colleges and universities, there will be people willing to take the role as helper and educator. 
-                    Helping students is what student affairs professionals do for the greater interest of the students, without anything in return. For my helping theory, 
-                    I used Person-Centered, Feminist, and Solution-Focus Therapy to identify when and with whom to implement appropriate crisis management and intervention responses. 
-                    Using this artifact, I illustrated my knowledge, awareness, and skills using my helping theory. 
-                    I was able to use appropriate individual decision-making and goal setting to better assist students. 
-                    In this competency, I demonstrated my willingness to grow and learn as a higher education professional when counseling and supporting students in their educational journey. 
-                    </p>
+                    <Title text='Reflective Paper'/>
+                    <p>Students need to be challenged; they need an environment that supports their development and helps them find their own identity and values (Brown, 1972). This reflective paper was a way to discuss my own personal beliefs and faith values that make me a better professional. What I have learned in this assignment was the potential to see each student as a whole person and recognize that the environment plays a significant role in their community and education. As I reflected on my personal experiences and beliefs, I realized that I could integrate my own values into professional practice. My faith aligns with my profession by wanting what is best for others. My religion has taught me to respect and value people’s differences. Therefore, in a higher education setting, I will be able to appreciate diversity and support students’ development</p>
 
                     <ReferencesBlock 
                         handleViewArtifact={() => window.open('https://drive.google.com/file/d/1ZOwOp3vyLQB9OmldEJ5Ryp7AemZsfPyD/view?usp=sharing', '_blank')}
                     >
                         <Reference>
-                            <p>Reynolds, A.L. (2009). Helping college students: Developing essential support skills for student affairs practice. Jossey-Bass.</p>
+                            <p>Brown, R. D. (1972). Where higher education might be going tomorrow. Student Development in tomorrow’s higher education: a return to the academy (pp. 12-27) Washington. D. C: American Personnel and Guidance Association.</p>
                         </Reference>
                     </ReferencesBlock>
                 </Artifact>

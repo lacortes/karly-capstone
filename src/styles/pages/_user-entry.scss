@@ -86,6 +86,41 @@
         top: 45%;
         left: 40%;
     }
+
+    @include media("height<850px") {
+        width: rem(450);
+        height: rem(450);
+    }
+
+    @include media("<670px") {
+
+        button {
+            min-width: none;
+            width: 100%;
+        }
+        
+        .foreground-drop, 
+        .background-drop {
+            width: 100%;
+            height: unset;
+            box-shadow: none;
+        }
+
+    }
+
+    @include media("<mobile") {
+        width: 100%;
+        height: 50%;
+        .foreground-drop, 
+        .background-drop {
+            width: unset;
+            height: unset;
+            box-shadow: none;
+        }
+    }
+
+    
+
 }
 
 .user-entry-content {

@@ -6,7 +6,7 @@ const References = () => {
     return (
         <BaseLayout>
             <Article headerTitle='References' headerClass='reference-article'>
-                <ReferencesBlock>
+                <ReferencesBlock hideButton={true}>
                     <Reference>
                         <p>Blimling, G.S. (2013). Challenges of assessment in student affairs. New Directions for Student Services, 142, 5-14.</p>
                     </Reference>

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { API_ROOT } from '../../core/config/environment';
 import validator from 'validator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faUser, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 const RequestAccess = ({ showSpinner, setIsLoggedIn }) => {
@@ -117,6 +117,15 @@ const RequestAccess = ({ showSpinner, setIsLoggedIn }) => {
                     <Button className="entry-request-access-btn outlined" label="Sign In" enabled={true} propogate={false} onClick={handleSignIn}/>
                     <div className={ `response-msg ${ respMsg.isError === true ? 'error-msg' : ''}` }>
                         {respMsg.msg}
+
+                        {respMsg.msg && respMsg.isError === false ?
+                            <span className='tool-tip' data-text="If email is not sent to inbox, check spam/junk folder.
+                                Organizations may filter out any external email.">
+                                <FontAwesomeIcon className="tool-tip-icon" icon={faExclamationCircle} />
+                            </span>
+                            : null
+                        }
+                        
                     </div>
                 </form>
             </div>

@@ -27,3 +27,20 @@
         }
     }
 }
+
+.pdf-spinner {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .spinner {
+        width: rem(150);
+    }
+
+    .ball {
+        width: rem(25);
+        height: rem(25);
+    }
+}

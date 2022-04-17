@@ -1,15 +1,16 @@
-.base-container {
-    margin: 0 auto;
-    width: 80%;
-    border: 1px solid white;
-}
-
 .base-container-wrapper {
     height: 100vh;
     width: 100%;
 }
 
 .base-nav-wrapper {
-    height: 12%;
     width: 100%;
+}
+
+.base-container {
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid white;
+    padding-top: rem(125);
+    padding-bottom: rem(50);
 }

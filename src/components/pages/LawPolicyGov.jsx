@@ -21,7 +21,7 @@ const LawPolicyGov = () => {
                     Student affairs professionals can create better curriculums by knowing the laws, resources, and the concerns of the students (Bresciani, 2011).</p>
 
                     <ReferencesBlock
-                        handleViewArtifact={() => window.open('https://drive.google.com/file/d/1AJ3SBLM01uYim7450dezUd2MLH8fpla5/view?usp=sharing', '_blank')}
+                        artifacts={[ 'https://drive.google.com/file/d/1AJ3SBLM01uYim7450dezUd2MLH8fpla5/view?usp=sharing' ]}
                     >
                         <Reference>
                             <p>Bresciani, M. J. (2011, August). Making assessment meaningful: What new student affairs professionals and those new to assessment need to know (NILOA Assessment Brief: Student Affairs). Urbana, IL: University of Illinois and Indiana University, National Institute for Learning Outcomes Assessment.</p>
@@ -40,7 +40,7 @@ const LawPolicyGov = () => {
                      This has shown me how essential it is to be up to date with state laws and regulations that impact policies and procedures 
                      of various universities and colleges.</p>
                     <ReferencesBlock
-                        handleViewArtifact={() => window.open('https://drive.google.com/file/d/1H4zX6VAg1cAVT1Srgly2f04ZVclxOojQ/view?usp=sharing', '_blank')}
+                        artifacts={[ 'https://drive.google.com/file/d/1H4zX6VAg1cAVT1Srgly2f04ZVclxOojQ/view?usp=sharing' ]}
                     >
                         <Reference>
                             <p>Lake, P. (2013). Foundations of higher education law and policy: Basic legal rules, concepts, and principles for student affairs. NASPA.</p>
@@ -62,10 +62,10 @@ const LawPolicyGov = () => {
                       that they should know while living on-campus. Students were able to talk to me as well as my team to better understand the policies and regulations 
                       of the housing rules of UHS. </p>
                     <ReferencesBlock
-                        handleViewArtifact={() => {
-                            window.open('https://docs.google.com/document/d/18VrnKez9cG9g44U8YXqisQ8P4bbvhafD/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true', '_blank');
-                            window.open('https://drive.google.com/file/d/1ThtjZziddKeWKzX3CC7acyJahp3oMn1N/view?usp=sharing', '_blank');
-                        }}
+                        artifacts={[ 
+                            'https://docs.google.com/document/d/18VrnKez9cG9g44U8YXqisQ8P4bbvhafD/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true',
+                            'https://drive.google.com/file/d/1ThtjZziddKeWKzX3CC7acyJahp3oMn1N/view?usp=sharing'
+                        ]}
                     >
                         <Reference>
                             <p>Reale, E., &amp; Primeri, E. (2015). Approaches to policy and governance in higher education. In Huisman, J., De Boer, H., Dill, D.D., &amp; Souto-Otero, Manuel (Eds.). The palgrave international handbook of higher education policy and governance (pp. 20-37). Palgrave Macmillan, London. <a href="https://doi.org/10.1007/978-1-137-45617-5" >https://doi.org/10.1007/978-1-137-45617-5</a></p>

@@ -19,7 +19,7 @@ const AdvisingAndSupporting = () => {
                     </p>
 
                     <ReferencesBlock
-                        handleViewArtifact={() => window.open('https://docs.google.com/document/d/1EiTYAQ0lXBrw-XGjmr5w_W51AX_XN7ka/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true', '_blank')}
+                        artifacts={[ 'https://docs.google.com/document/d/1EiTYAQ0lXBrw-XGjmr5w_W51AX_XN7ka/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true' ]}
                     >
                         <Reference>
                             <p>Reynolds, A.L. (2009). Helping college students: Developing essential support skills for student affairs practice. Jossey-Bass.</p>
@@ -38,7 +38,7 @@ const AdvisingAndSupporting = () => {
                     </p>
 
                     <ReferencesBlock
-                        handleViewArtifact={() => window.open('https://docs.google.com/document/d/1TqmxJxrB2BjFs_BHp_A5QMMFDzMGDrXP/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true', '_blank')}
+                        artifacts={[ 'https://docs.google.com/document/d/1TqmxJxrB2BjFs_BHp_A5QMMFDzMGDrXP/edit?usp=sharing&ouid=112551125562924414081&rtpof=true&sd=true' ]}
                     >
                         <Reference>
                             <p>
@@ -59,7 +59,7 @@ const AdvisingAndSupporting = () => {
                     </p>
 
                     <ReferencesBlock
-                        handleViewArtifact={() => window.open('https://docs.google.com/document/d/1q2pP6W8hdZcNqnC_36D6m-QBovPjP0qwYeWZhblVKJo/edit?usp=sharing', '_blank')}
+                        artifacts={[ 'https://docs.google.com/document/d/1q2pP6W8hdZcNqnC_36D6m-QBovPjP0qwYeWZhblVKJo/edit?usp=sharing' ]}
                     >
                         <Reference>
                             <p>Reynolds, A.L. (2009). Helping college students: Developing essential support skills for student affairs practice. San Francisco: Jossey-Bass.</p>

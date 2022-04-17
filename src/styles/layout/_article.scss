@@ -70,6 +70,42 @@
             border-color: $text-primary;
         }
     }
+
+    .artifact-btn-wrapper {
+        position: relative;
+
+        .artifact-dropdown {
+            display: none;
+        }
+
+        .artifact-dropdown.show {
+            display: block;
+            list-style: none;
+            position: absolute;
+            width: 100%;
+            background: $primary;
+            border: rem(1) solid $secondary;
+            border-radius: rem(5);
+            top: 0;
+            transform: translateY(-100%);
+
+            li {
+                padding: 0.5em;
+                text-align: center;
+            }
+
+            li:not(:last-child) {
+                border-bottom: 1px solid $text-light;
+            }
+
+            a {
+                text-decoration: none;
+                color: $text-primary;
+                display: block;
+            }
+        }
+
+    }
 }
 
 .references-wrapper {

@@ -26,12 +26,38 @@
 
     .response-msg {
         color: $text-primary;
+        font-size: $font-size-s;
         font-weight: 450;
         text-align: center;
         margin-top: rem(5);
 
         &.error-msg {
             color: $text-error;
+        }
+
+        .tool-tip {
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                visibility: hidden;
+                position: absolute;
+                content: attr(data-text);
+                background: #595857;
+                color: white;
+                width: rem(300);
+                font-size: 0.85em;
+                text-align: left;
+                border-radius: 0.5em;
+                padding: rem(4);
+                transform: translate(-98%, -95%);
+                font-weight: 400;
+                opacity: 0.95;
+            }
+
+            &:hover::before {
+                visibility: visible;
+            }
         }
     }
 }

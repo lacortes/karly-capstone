@@ -7,15 +7,13 @@ const Philosophy = () => {
         <BaseLayout>
             <Article headerTitle='Philosophy'>
                 <Title text='Philosophy in Student Affairs'/>
-                <p>
-                    Student Affairs is a platform where faculty and staff can use their privilege to help students become better advocates for themselves. 
-                    Student Affair professionals provide support, advising, mentorship, referrals, development, training, engagement, and create opportunities for the students. 
-                    My philosophy of student affairs is a combination of my values, faith, experience, literature, and relationships that I have had in my journey. 
-                    Having positive interactions with faculty and staff can help students develop a stronger unity within the campus (Calhoun, 1996). 
-                    Thus, establish conditions that will motivate and inspire students to devote their time and energy in their education (Calhoun, 1996). 
-                    According to Calhoun (1996), learning and personal development occurs through a transaction between students and their environment, which is why having a welcoming environment plays a vital role to the student. 
-                    I pledge to encourage widespread engagement in experiences that foster strong and enduring relationships in a vibrant campus community.
-                </p>
+                <p>Higher Education is a field where faculty and staff have a platform to use their privilege to help students become better advocates for themselves. 
+                Student Affair professionals provide support, advising, mentorship, referrals, development, training, engagement, and create opportunities for the students. 
+                My philosophy of student affairs is a combination of my values, faith, experience, literature, and relationships that I have had in my journey. 
+                Having positive interactions with faculty and staff can help students develop a stronger unity within the campus (Calhoun, 1996). 
+                Thus, establish conditions that will motivate and inspire students to devote their time and energy in their education (Calhoun, 1996). 
+                According to Calhoun (1996), learning and personal development occurs through a transaction between students and their environment, which is why having a welcoming environment plays a vital role to the student.
+                 I pledge to encourage widespread engagement in experiences that foster strong and enduring relationships in a vibrant campus community. </p>
 
                 <p>
                     My mission is for students to be safe, heard, and have a sense of belonging throughout their educational journey. 
